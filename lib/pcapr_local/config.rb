@@ -9,14 +9,14 @@ module Config
 
     DEFAULT_CONFIG = {
         # Shared config.
-        "install_dir" => "#{HOME}/pcapr.Local/",
-        "pcap_dir"    => "#{HOME}/pcapr.Local/pcaps",
-        "index_dir"   => "#{HOME}/pcapr.Local/indexes",
+        "install_dir"     => "#{HOME}/pcapr.Local/",
+        "pcap_dir"        => "#{HOME}/pcapr.Local/pcaps",
+        "index_dir"       => "#{HOME}/pcapr.Local/indexes",
 
         # UI (Sinatra)
         "app" => {
-            "host" => '127.0.0.1',
-            "port" => 8080,
+            "host"        => '127.0.0.1',
+            "port"        => 8080,
         },
 
         # Pcap scanning
@@ -27,15 +27,20 @@ module Config
 
         # Couch
         "couch" => {
-            "uri" => 'http://127.0.0.1:5984/',
-            "database" => "pcapr_local"
+            "uri"         => 'http://127.0.0.1:5984/',
+            "database"    => 'pcapr_local'
         },
 
         # Xtractr
         "xtractr" => {
             "path"         => 'xtractr',
             "idle_timeout" => 60  # kill xtractr browser after n seconds of idle time 
-        }
+        },
+        
+        # tshark
+        "tshark" => {
+            "options"      => ''
+        },
     }
 
 

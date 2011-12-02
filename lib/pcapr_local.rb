@@ -69,7 +69,14 @@ module PcaprLocal
     def self.get_db config
         PcaprLocal::DB.get_db config.fetch("couch")
     end
-
+    
+    def self.set_tshark_options config
+        options = config['tshark']['options']
+        return unless options
+        
+        Mu::Scenario::Pcap.reset_options(options)
+    end
+    
     def self.start config=nil
         config ||= PcaprLocal::Config.config
         
@@ -93,6 +100,9 @@ module PcaprLocal
 
         # Create pid file that will be deleted when we shutdown.
         create_pid_file config['pidfile']
+        
+        # Override the default tshark options
+        set_tshark_options(config)
 
         # Get database instance
         db = get_db config

@@ -15,6 +15,7 @@ module Pcap
     TSHARK_READ_TIMEOUT     = 10.0 # seconds
     TSHARK_LINES_PER_PACKET = 16384
     TSHARK_OPTS = "-n -o tcp.desegment_tcp_streams:false"
+    TSHARK_OPTS_SUFFIX = TSHARK_OPTS
     TSHARK_SIZE_OPTS = "-n -o 'column.format: cum_size, \"%B\"'"
     TSHARK_PSML_OPTS = %Q{#{TSHARK_OPTS} -o 'column.format: "Protocol", "%p", "Info", "%i"'}
 
@@ -24,6 +25,13 @@ module Pcap
     EXCLUDE_FROM_SIZE_CHECK = ['rtp'].freeze
 
     class PcapTooLarge < StandardError; end
+    
+    def self.reset_options options
+        return unless options
+        tshark_opts = options << ' ' << TSHARK_OPTS_SUFFIX
+        remove_const(:TSHARK_OPTS) if const_defined?(:TSHARK_OPTS)
+        const_set(:TSHARK_OPTS, tshark_opts)
+    end
 
     def self.validate_pcap_size(path)
         tshark_filter = EXCLUDE_FROM_SIZE_CHECK.map{ |proto| "not #{proto}" }.join " and "
