@@ -100,12 +100,12 @@ click the Download PAR File link.
 
 ### On the Command Line
 
-The gem bundles a CLI tool for creating PAR files called pcap2par. To use, 
+The gem bundles a CLI tool for creating PAR files called `pcap2par`. To use, 
 just provide a path to your pcap:
  
     $ pcap2par my_traffic.pcap
 
-This creates a PAR file called export.par in the current directory. You can 
+This creates a PAR file called `export.par` in the current directory. You can 
 optionally specify the name of the output file as a second argument:
 
     $ pcap2par my_traffic.pcap ~/par_files/my_traffic.par 
