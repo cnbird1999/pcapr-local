@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pcapr-local}
-  s.version = "0.1.13"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mu Dynamics"]
-  s.date = %q{2011-04-04}
+  s.date = %q{2011-12-08}
   s.description = %q{Index, Browse, and Query your vast pcap collection.}
-  s.email = %q{nbaggott@gmail.com}
+  s.email = %q{rubygems@mudynamics.com}
   s.executables = ["pcap2par", "startpcapr", "stoppcapr", "xtractr"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
@@ -228,30 +228,6 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Manage your pcap collection}
-  s.test_files = [
-    "test/mu/pcap/reader/tc_http_family.rb",
-    "test/mu/pcap/tc_ethernet.rb",
-    "test/mu/pcap/tc_header.rb",
-    "test/mu/pcap/tc_ipv4.rb",
-    "test/mu/pcap/tc_ipv6.rb",
-    "test/mu/pcap/tc_packet.rb",
-    "test/mu/pcap/tc_pair.rb",
-    "test/mu/pcap/tc_pkthdr.rb",
-    "test/mu/pcap/tc_reader.rb",
-    "test/mu/pcap/tc_tcp.rb",
-    "test/mu/pcap/tc_udp.rb",
-    "test/mu/pcap/tc_wrapper.rb",
-    "test/mu/scenario/pcap/tc_fields.rb",
-    "test/mu/scenario/pcap/tc_rtp.rb",
-    "test/mu/scenario/tc_pcap.rb",
-    "test/mu/tc_pcap.rb",
-    "test/mu/testcase.rb",
-    "test/pcapr_local/tc_api.rb",
-    "test/pcapr_local/test_scanner.rb",
-    "test/pcapr_local/test_xtractr.rb",
-    "test/pcapr_local/testcase.rb",
-    "test/test_pcapr_local.rb"
-  ]
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
